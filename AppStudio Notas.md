@@ -8,6 +8,8 @@ Relación de notas y ejemplos para la programación de las pantallas en los robo
 
 [Buscar objetos select en Instance](#buscar-objetos-select-en-instance)
 
+[Generar una señal pulsada](#generar-una-señal-pulsada)
+
 [Cambiar el valor de una salidad digital](#cambiar-el-valor-de-una-salida-digital)
 
 [Cambiar el valor de una variable](#cambiar-el-valor-de-una-variable)
@@ -97,6 +99,12 @@ Observa esta función de usuario:
       }
       );
     }
+
+## Generar una señal pulsada
+
+Este ejemplo genera una señal pulsada. Durante 1000 milisegundo estara a nivel alto, y volverá a nivel bajo
+
+      await API.RWS.SIGNAL.setSignalValue("R1diP3Comp3Aprox",1, {mode:"pulse",activePulse:1000,passivePulse:1000});
 
 ## Leer los archivos de un directorio
 
