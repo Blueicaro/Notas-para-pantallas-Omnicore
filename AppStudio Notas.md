@@ -24,6 +24,7 @@ Relación de notas y ejemplos para la programación de las pantallas en los robo
 
 [Ocultar un Layout por código](#ocultar-un-layout-por-código)
 
+[Ejemplo de WebData](#Ejemplo_de_WebData)
 
 ## Acceder a un componente de la pantalla
 
@@ -177,3 +178,22 @@ La propiedad container es un DIV por tanto se puede cambiar su propiedad display
             Instance.LayoutInfobox_83.container.style.display = '';
       }
  
+## Ejemplo de WebData
+
+Webdata funciona como un diccionario. Dónde tenemos una clave y un valor.
+Para crear se usar el siguiente código:
+
+       webDataVar = API.WEBDATAMONITOR.setWebdata("nombre","pepe");
+
+En este ejemplo, se asigna a la clave `Nombre` el valor `pepe`. Este código se puede colocar en el evento `OnCreate` por ejemplo.
+
+Y en el evento `OnClick`, por ejemplo, de un botón se pude comprobar su valor:
+
+      var valor = API.WEBDATAMONITOR.getWebdata("nombre");
+      if (valor != undefined) {
+       console.log("Nombre vale: ", valor);
+      } 
+      else {
+       console.log("Nombre no está definido");
+      }
+
