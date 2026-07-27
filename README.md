@@ -19,3 +19,7 @@ Conocimientos de robots ABB, programación y JavaScript.
 ## 🧑‍💻 Más información
 
 Obtener más información sobre [AppStudio](https://new.abb.com/products/robotics/es/software-y-digital/appstudio).
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](license.md) para detalles.
