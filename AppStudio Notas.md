@@ -8,13 +8,21 @@ Relación de notas y ejemplos para la programación de las pantallas en los robo
 
 [Buscar objetos select en Instance](#buscar-objetos-select-en-instance)
 
-[Generar una señal pulsada](#generar-una-señal-pulsada)
-
 [Cambiar el valor de una salidad digital](#cambiar-el-valor-de-una-salida-digital)
 
 [Cambiar el valor de una variable](#cambiar-el-valor-de-una-variable)
 
 [Cómo usar los componentes en las funciones de usuario](#cómo-usar-los-componentes-en-las-funciones-de-usuario)
+
+[Comprobar si existe un fichero](#comprobar-si-existe-un-fichero)
+
+[Crear un archivo de texto](#crear-un-archivo-de-texto)
+
+[Ejemplo de WebData](#Ejemplo_de_WebData)
+
+[Generar una señal pulsada](#generar-una-señal-pulsada)
+
+[Leer el contenido de módulo](#leer-el-contenido-de-un-módulo)
 
 [Leer el valor de una variable](#leer-el-valor-de-una-variable)
 
@@ -24,7 +32,7 @@ Relación de notas y ejemplos para la programación de las pantallas en los robo
 
 [Ocultar un Layout por código](#ocultar-un-layout-por-código)
 
-[Ejemplo de WebData](#Ejemplo_de_WebData)
+
 
 ## Acceder a un componente de la pantalla
 
@@ -101,11 +109,28 @@ Observa esta función de usuario:
       );
     }
 
+## Comprobar si existe un fichero
+
+Devuelve True o false
+
+´´´
+var respuesta = await API.FILESYSTEM.fileExists("HOME:/programas", "mymodulo.modx");
+    console.log (respuesta)
+´´´
+
+## Crear un archivo de texto
+
+```
+await API.FILESYSTEM.createNewFile("$HOME/programas/mymodulo.modx", ficheroConTexto, true);
+```
+
+
 ## Generar una señal pulsada
 
 Este ejemplo genera una señal pulsada. Durante 1000 milisegundo estara a nivel alto, y volverá a nivel bajo
 
       await API.RWS.SIGNAL.setSignalValue("R1diP3Comp3Aprox",1, {mode:"pulse",activePulse:1000,passivePulse:1000});
+
 
 ## Leer los archivos de un directorio
 
@@ -124,6 +149,13 @@ Este ejemplo lee los archivos del directorio home, y los carga en un componente 
       console.log(variableValue.length);
       for (let step = 0; step < variableValue.length; step++){
       console.log(variableValue[step]);}
+
+
+## Leer el contenido de un módulo
+
+```
+     var fichero = await API.FILESYSTEM.getFile("$HOME", "programas/mymodule.modx");
+```
 
 ## Leer el valor de una variable
 
